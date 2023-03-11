@@ -1,11 +1,14 @@
 import React from "react";
 import ContainerMain from "../components/container/container";
-import ScreenGame from "../components/screenGame/screenGame";
 
-export default function Container(): JSX.Element {
+interface AuxProps {
+    children: JSX.Element | JSX.Element[];
+}
+
+export default function Container({ children }: AuxProps): JSX.Element {
     return (
         <ContainerMain>
-            <ScreenGame />
+            {children}
         </ContainerMain>
     );
 }

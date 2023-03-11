@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
         display: "flex",
         direction: "rtl",
         alignItems: "center",
-        paddingTop: 20,
+        padding: 10,
         height: "100%"
     }
 });

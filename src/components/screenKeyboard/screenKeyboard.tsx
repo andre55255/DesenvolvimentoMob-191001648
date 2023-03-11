@@ -2,26 +2,26 @@ import React from "react";
 import { FlatList, StyleSheet, View } from "react-native";
 import { constantsFontText } from "../../helpers/constants";
 import { GameButtonAnswers } from "../../types/gameButtonAnswer";
-import ButtonAnswer from "../buttonAnswer/buttonAnswer";
+import ButtonKeyboard from "../buttonKeyboard/buttonKeyboard";
 
 interface AuxProps {
     dataButtonAnswer: GameButtonAnswers[]
 }
 
-export default function ScreenButtons({ dataButtonAnswer }: AuxProps): JSX.Element {
+export default function ScreenKeyboard({ dataButtonAnswer }: AuxProps): JSX.Element {
     return (
         <View style={styles.container}>
-            <FlatList
+            <FlatList 
                 data={dataButtonAnswer}
-                numColumns={5}
                 keyExtractor={item => item.id}
+                numColumns={10}
                 renderItem={({ item }) => {
                     return (
                         <View style={styles.items}>
-                            <ButtonAnswer 
+                            <ButtonKeyboard 
                                 backColorBtn={item.backColor}
-                                fontSizeText={constantsFontText.sizeButtonAnswer}
                                 colorText={item.colorText}
+                                fontSizeText={constantsFontText.sizeButtonKeyboard}
                                 text={item.text}
                             />
                         </View>
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     container: {
         marginTop: 20,
         paddingVertical: 15,
-        paddingHorizontal: 20,
+        paddingHorizontal: 10,
         width: "100%"
     },
     items: {
