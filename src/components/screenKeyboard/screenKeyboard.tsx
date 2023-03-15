@@ -5,10 +5,11 @@ import { GameButtonAnswers } from "../../types/gameButtonAnswer";
 import ButtonKeyboard from "../buttonKeyboard/buttonKeyboard";
 
 interface AuxProps {
-    dataButtonAnswer: GameButtonAnswers[]
+    dataButtonAnswer: GameButtonAnswers[];
+    onPressEvt: Function;
 }
 
-export default function ScreenKeyboard({ dataButtonAnswer }: AuxProps): JSX.Element {
+export default function ScreenKeyboard({ dataButtonAnswer, onPressEvt }: AuxProps): JSX.Element {
     return (
         <View style={styles.container}>
             <FlatList 
@@ -23,6 +24,8 @@ export default function ScreenKeyboard({ dataButtonAnswer }: AuxProps): JSX.Elem
                                 colorText={item.colorText}
                                 fontSizeText={constantsFontText.sizeButtonKeyboard}
                                 text={item.text}
+                                gameData={item}
+                                onPressEvt={onPressEvt}
                             />
                         </View>
                     );

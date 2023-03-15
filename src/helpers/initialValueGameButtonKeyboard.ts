@@ -119,7 +119,7 @@ export const initialValueGameButtonKeyboard = () => {
             colorText: constantsColorsText.notSet,
         });
         data.push({
-            id: ">",
+            id: "OK",
             text: ">",
             backColor: constantsColorsBackColor.btnEnter,
             colorText: constantsColorsText.btnEnter,
@@ -165,6 +165,12 @@ export const initialValueGameButtonKeyboard = () => {
             text: "M",
             backColor: constantsColorsBackColor.notSet,
             colorText: constantsColorsText.notSet,
+        });
+        data.push({
+            id: "BACK",
+            text: "x",
+            backColor: constantsColorsBackColor.btnBack,
+            colorText: constantsColorsText.btnBack,
         });
         return data;
     } catch (ex) {

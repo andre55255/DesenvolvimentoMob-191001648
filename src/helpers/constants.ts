@@ -3,7 +3,8 @@ export const constantsColorsBackColor = {
     letterCorrect: "#18A539",
     letterPositionIncorrect: "#D5BF4F",
     notSet: "#F5F5F5",
-    btnEnter: "#153D2C"
+    btnEnter: "#153D2C",
+    btnBack: "#CC0000"
 };
 
 export const constantsColorsText = {
@@ -12,6 +13,7 @@ export const constantsColorsText = {
     letterPositionIncorrect: "#fff",
     notSet: "#000",
     btnEnter: "#fff",
+    btnBack: "#fff"
 };
 
 export const constantsFontText = {

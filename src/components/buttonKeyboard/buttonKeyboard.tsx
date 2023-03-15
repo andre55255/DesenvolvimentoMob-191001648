@@ -1,4 +1,4 @@
-import { Text, TouchableOpacity, View } from "react-native";
+import { Alert, Text, TouchableOpacity, View } from "react-native";
 import { buttonProps } from "../../types/buttonProps";
 
 export default function ButtonKeyboard({
@@ -6,6 +6,8 @@ export default function ButtonKeyboard({
     backColorBtn,
     colorText,
     fontSizeText,
+    onPressEvt,
+    gameData,
 }: buttonProps) {
     return (
         <TouchableOpacity
@@ -16,6 +18,11 @@ export default function ButtonKeyboard({
                 borderColor: "#fff",
                 margin: 2,
             }}
+            onPress={() =>
+                onPressEvt
+                    ? onPressEvt(gameData)
+                    : Alert.alert("Erro", "Função não encontrada")
+            }
         >
             <Text
                 style={{

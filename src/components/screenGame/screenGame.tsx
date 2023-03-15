@@ -22,13 +22,36 @@ export default function ScreenGame(): JSX.Element {
             const error = err as Error;
             Alert.alert("Erro", error.message);
         }
-    }, []);
+    }, [setDataGameAnswer, setDataGameKeyboard]);
+
+    const pressKeyboard = (key: GameButtonAnswers) => {
+        try {
+            const dataGame = [...dataGameAnswer];
+            let index: number = -2;
+            const elementIndex = dataGame.forEach((val, ind) => {
+                if (val.text != " ") {
+                    index = ind;
+                }
+            });
+            if (index == -2) {
+                index = 0;
+            }
+            dataGame[index].text = key.text;
+            setDataGameAnswer(dataGame);
+        } catch (err) {
+            const error = err as Error;
+            Alert.alert("Erro", "Falha ao capturar tecla: " + error.message);
+        }
+    };
 
     return (
         <>
             <Header title="PALAVRA.IO" />
             <ScreenButtons dataButtonAnswer={dataGameAnswer} />
-            <ScreenKeyboard dataButtonAnswer={dataGameKeyboard} />
+            <ScreenKeyboard
+                dataButtonAnswer={dataGameKeyboard}
+                onPressEvt={pressKeyboard}
+            />
         </>
     );
 }
