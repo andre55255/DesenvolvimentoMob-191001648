@@ -1,5 +1,5 @@
 import { GameButtonAnswers } from "../types/gameButtonAnswer";
-import { constantsColorsBackColor, constantsColorsText } from "./constants";
+import { configGame, constantsColorsBackColor, constantsColorsText } from "./constants";
 
 export const initialValueGameButtonKeyboard = () => {
     try {
@@ -119,7 +119,7 @@ export const initialValueGameButtonKeyboard = () => {
             colorText: constantsColorsText.notSet,
         });
         data.push({
-            id: "OK",
+            id: configGame.idBtnOk,
             text: ">",
             backColor: constantsColorsBackColor.btnEnter,
             colorText: constantsColorsText.btnEnter,
@@ -167,7 +167,7 @@ export const initialValueGameButtonKeyboard = () => {
             colorText: constantsColorsText.notSet,
         });
         data.push({
-            id: "BACK",
+            id: configGame.idBtnBack,
             text: "x",
             backColor: constantsColorsBackColor.btnBack,
             colorText: constantsColorsText.btnBack,

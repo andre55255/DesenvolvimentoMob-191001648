@@ -1,10 +1,12 @@
 import { GameButtonAnswers } from "../types/gameButtonAnswer";
-import { constantsColorsBackColor, constantsColorsText } from "./constants";
+import { configGame, constantsColorsBackColor, constantsColorsText } from "./constants";
 
 export const initialValueGameButtonAnswer = () => {
     try {
         const data: GameButtonAnswers[] = [];
-        for (let i = 1; i <= 30; i++) {
+        const numberIndex = configGame.numberLetterWord * configGame.numberWords;
+
+        for (let i = 1; i <= numberIndex; i++) {
             data.push({
                 id: i.toString(),
                 text: " ",

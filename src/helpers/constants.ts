@@ -4,7 +4,7 @@ export const constantsColorsBackColor = {
     letterPositionIncorrect: "#D5BF4F",
     notSet: "#F5F5F5",
     btnEnter: "#153D2C",
-    btnBack: "#CC0000"
+    btnBack: "#CC0000",
 };
 
 export const constantsColorsText = {
@@ -13,10 +13,23 @@ export const constantsColorsText = {
     letterPositionIncorrect: "#fff",
     notSet: "#000",
     btnEnter: "#fff",
-    btnBack: "#fff"
+    btnBack: "#fff",
 };
 
 export const constantsFontText = {
     sizeButtonAnswer: 17,
-    sizeButtonKeyboard: 17
+    sizeButtonKeyboard: 17,
+};
+
+export const configGame = {
+    numberLetterWord: 5,
+    numberWords: 6,
+    idBtnBack: "BACK",
+    idBtnOk: "OK"
+};
+
+export const statusWord = {
+    notExist: 0,
+    letterCorrect: 1,
+    letterPositionIncorrect: 2
 }

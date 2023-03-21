@@ -1,13 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { Alert } from "react-native";
+import { pressKeyboardBll } from "../../bll/keyboardActions";
+import { configGame } from "../../helpers/constants";
 import { initialValueGameButtonAnswer } from "../../helpers/initialValueGameButtonAnswer";
 import { initialValueGameButtonKeyboard } from "../../helpers/initialValueGameButtonKeyboard";
+import { CurrentWord } from "../../types/currentWord";
 import { GameButtonAnswers } from "../../types/gameButtonAnswer";
 import Header from "../header/header";
 import ScreenButtons from "../screenButtons/screenButtons";
 import ScreenKeyboard from "../screenKeyboard/screenKeyboard";
 
 export default function ScreenGame(): JSX.Element {
+    const [currentWord, setCurrentWord] = useState<CurrentWord>({
+        numberWord: 1,
+        word: [],
+    });
+
     const [dataGameAnswer, setDataGameAnswer] = useState<GameButtonAnswers[]>(
         []
     );
@@ -26,21 +34,16 @@ export default function ScreenGame(): JSX.Element {
 
     const pressKeyboard = (key: GameButtonAnswers) => {
         try {
-            const dataGame = [...dataGameAnswer];
-            let index: number = -2;
-            const elementIndex = dataGame.forEach((val, ind) => {
-                if (val.text != " ") {
-                    index = ind;
-                }
-            });
-            if (index == -2) {
-                index = 0;
-            }
-            dataGame[index].text = key.text;
-            setDataGameAnswer(dataGame);
+            pressKeyboardBll(
+                key,
+                currentWord,
+                setCurrentWord,
+                dataGameAnswer,
+                setDataGameAnswer
+            );
         } catch (err) {
             const error = err as Error;
-            Alert.alert("Erro", "Falha ao capturar tecla: " + error.message);
+            Alert.alert("Erro", error.message);
         }
     };
 
