@@ -1,9 +1,10 @@
 export interface CurrentWord {
-    word: WordCurrentType[],
-    numberWord: number
+    word: WordCurrentType[];
+    numberWord: number;
 }
 
 export interface WordCurrentType {
-    value: string,
-    dataGamePosition: string
+    index: number;
+    value: string;
+    dataGamePosition: string;
 }

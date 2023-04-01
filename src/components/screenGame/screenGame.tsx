@@ -32,14 +32,16 @@ export default function ScreenGame(): JSX.Element {
         }
     }, [setDataGameAnswer, setDataGameKeyboard]);
 
-    const pressKeyboard = (key: GameButtonAnswers) => {
+    const pressKeyboard = async (key: GameButtonAnswers) => {
         try {
-            pressKeyboardBll(
+            await pressKeyboardBll(
                 key,
                 currentWord,
                 setCurrentWord,
                 dataGameAnswer,
-                setDataGameAnswer
+                setDataGameAnswer,
+                dataGameKeyboard,
+                setDataGameKeyboard
             );
         } catch (err) {
             const error = err as Error;
