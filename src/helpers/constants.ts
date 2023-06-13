@@ -42,9 +42,9 @@ export const statusWord = {
 }
 
 export const constantsApi = {
-    baseUrl: "http://192.168.230.116:8080",
+    baseUrl: "http://192.168.35.134:8080",
     auth: {
-        key: "batata-doce-palavra-io",
+        key: "paodemel",
         system: "palavra-io"
     },
     timeout: 5000,
